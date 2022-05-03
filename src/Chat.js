@@ -9,7 +9,7 @@ import MicIcon from '@mui/icons-material/Mic';
 
 function Chat() {
   return (
-    <div classname='chat'>
+    <div className='chat'>
         <div className='chat_header'>
         <Avatar />
         <div className='chat_headerInfo'>
