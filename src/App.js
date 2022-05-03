@@ -24,8 +24,14 @@ function App() {
     console.log(channel);
     channel.bind('inserted', (data) => {
       alert(JSON.stringify(data));
-      setMessages([...messages,data])
+      setMessages([...messages,data]);
     });
+
+    return () => {
+      channel.unbind_all();
+      channel.unsubscribe();
+    }
+
   }, [messages]); 
 
   console.log(messages);
@@ -35,7 +41,7 @@ function App() {
      <div className='app_body'>
      <Sidebar />
 
-    <Chat />
+    <Chat messages={messages}/>
        </div> 
 
     </div>
